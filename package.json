@@ -1,0 +1,23 @@
+{
+  "name": "ebacautomacaocypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavoullmann/EbacAutomacaoCypress.git"
+  },
+  "keywords": [],
+  "author": "Gustavo Ullmann",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavoullmann/EbacAutomacaoCypress/issues"
+  },
+  "homepage": "https://github.com/gustavoullmann/EbacAutomacaoCypress#readme",
+  "devDependencies": {
+    "cypress": "^13.1.0"
+  }
+}
