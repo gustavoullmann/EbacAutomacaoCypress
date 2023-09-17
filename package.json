@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/gustavoullmann/EbacAutomacaoCypress#readme",
   "devDependencies": {
+    "@faker-js/faker": "^8.0.2",
     "cypress": "^13.1.0"
   }
 }
