@@ -47,5 +47,11 @@ describe('Testa a página de Produtos da Ebac', () => {
             cy.get('.woocommerce-message')
                 .should('contain', 'removido')
         });
+
+        it('Adiciona um produto no carrinho - usando custom commands', () => {
+            cy.adicionaProduto('Abominable Hoodie', 'M', 'Green', 3)
+            cy.get('.woocommerce-message')
+                .should('contain', 'foram adicionados no seu carrinho')
+        });
     });
 });
