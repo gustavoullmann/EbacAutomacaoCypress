@@ -7,7 +7,7 @@ describe('Testa o menu de endereços do usuário', () => {
         cy.login('aluno_ebac@teste.com', 'teste@teste.com')
     });
 
-    it('Deve fazer cadastro de faturamento com sucesso', () => {
+    it('Deve fazer cadastro de endereço de faturamento com sucesso', () => {
         
     });
 });
