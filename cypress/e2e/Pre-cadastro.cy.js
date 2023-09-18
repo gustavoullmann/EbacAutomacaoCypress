@@ -46,11 +46,17 @@ describe('Testa a página de Pré-cadastro da Ebac', () => {
     });
 
     it('Não aceita cadastro com senha vazia', () => {
-        var newEmail = faker.internet
-            .email()
         cy.get('#reg_email')
             .type(`${newEmail}{enter}`)
         cy.get('.woocommerce-error > li')
             .should('contain', 'Digite a senha da conta')
     })
+
+    it('Completa o pré-cadastro com sucesso - usando custom commands', () => {
+        let newEmail = faker.internet
+            .email()
+        cy.preCadastro(newEmail, 'senhaForte123@#', 'Gustavo', 'Tester' )
+        cy.get('.woocommerce-message')
+            .should('contain', 'modificados com sucesso')
+    });
 });
