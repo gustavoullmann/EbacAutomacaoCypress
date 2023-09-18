@@ -28,7 +28,7 @@ describe('Testa a página de Login da Ebac', () => {
             .should('contain', 'Olá')
     });
 
-    it.only('Faz login com sucesso - fixture', () => {
+    it('Faz login com sucesso - fixture', () => {
         cy.fixture('perfil').then(dados => {
             cy.get('#username')
                 .type(dados.usuario)
