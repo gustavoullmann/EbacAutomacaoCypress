@@ -1,13 +1,12 @@
 /// <reference types = "cypress"/>
 
-const baseUrl = Cypress.env('baseUrl') + '/my-account/'
 const validUsername = 'aluno_ebac@teste.com'
 const validPassword = 'teste@teste.com'
 
 describe('Testa a página de Login da Ebac', () => {
 
     beforeEach(() => {
-        cy.visit(baseUrl)
+        cy.visit('minha-conta/')
     });
 
     it('Faz login com sucesso', () => {

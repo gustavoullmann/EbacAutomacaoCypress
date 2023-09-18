@@ -1,13 +1,11 @@
 /// <reference types = "cypress"/>
 
-const baseUrl = Cypress.env('baseUrl') + 'produtos/'
-
 describe('Testa a página de Produtos da Ebac', () => {
 
     describe('Testa a página de produtos', () => {
 
         beforeEach(() => {
-            cy.visit(baseUrl)
+            cy.visit('produtos/')
         });
 
         it('Seleciona um produto da página', () => {

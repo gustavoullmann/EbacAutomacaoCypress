@@ -1,7 +1,6 @@
 /// <reference types = "cypress"/>
 
 const { faker } = require('@faker-js/faker');
-const baseUrl = Cypress.env('baseUrl') + 'minha-conta/'
 var firstName = faker.person.firstName()
 var lastName = faker.person.lastName()
 var email = faker.internet.exampleEmail({ firstName: `${firstName}`, lastName: `${lastName}` })
@@ -10,7 +9,7 @@ var password = faker.internet.password({ length: 12 })
 describe('Testa a página de Pré-cadastro da Ebac', () => {
 
     beforeEach(() => {
-        cy.visit(baseUrl)
+        cy.visit('minha-conta/')
     });
 
     it('Completa o pré-cadastro com sucesso', () => {
