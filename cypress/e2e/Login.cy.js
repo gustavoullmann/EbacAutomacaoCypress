@@ -1,5 +1,6 @@
 /// <reference types = "cypress"/>
 
+const perfil = require('../fixtures/perfil.json')
 const validUsername = 'aluno_ebac@teste.com'
 const validPassword = 'teste@teste.com'
 
@@ -16,6 +17,26 @@ describe('Testa a página de Login da Ebac', () => {
             .type(`${validPassword}{enter}`)
         cy.get('.woocommerce-MyAccount-content > :nth-child(2)')
             .should('contain', 'Olá')
+    });
+
+    it('Faz login com sucesso - arquivo de dados', () => {
+        cy.get('#username')
+            .type(perfil.usuario)
+        cy.get('#password')
+            .type(`${perfil.senha}{enter}`)
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2)')
+            .should('contain', 'Olá')
+    });
+
+    it.only('Faz login com sucesso - fixture', () => {
+        cy.fixture('perfil').then(dados => {
+            cy.get('#username')
+                .type(dados.usuario)
+            cy.get('#password')
+                .type(`${dados.senha}{enter}`, {log: false})
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2)')
+                .should('contain', 'Olá')
+        })
     });
 
     it('Exibe mensagem de erro ao inserir usuário inválido', () => {
